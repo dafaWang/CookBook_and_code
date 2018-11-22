@@ -643,7 +643,16 @@ s.save()
 ## 3. 设置admin管理类
 - 实现方式
     - ModelAdmin
+    
+    class StudentAdmin(admin.ModelAdmin):
+        pass
+    admin.site.register(Student,StudentAdmin)
+    
     - 装饰器
+    
+    @admin.register(Teacher)
+    class TeacherAdmin(admin.ModelAdmin):
+
 - 修改页面显示数量：list_per_page
 - 操作选项： actions_on_top/button 
 - 控制列表中显示的内容：list_display=[]
@@ -675,6 +684,26 @@ s.save()
     )  # 详情分组
  
 
+标题设置：
+
+# Register your models here.
+admin.site.site_header = '我的demo'
+admin.site.site_title = 'site_title'
+admin.site.index_title = '后台管理'
+
+
+修改admin app名称：
+
+__init__.py  :  
+default_app_config  = 'db_demo.apps.Myconfig'
+
+/app.py  :
+from django.apps import AppConfig
+
+
+class Myconfig(AppConfig):
+    name = 'app名称'
+    verbose_name = 'Db测试'
     
     
 # RESTful
