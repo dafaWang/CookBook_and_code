@@ -660,8 +660,11 @@ s.save()
 - 分组显示
 
     list_per_page = 20  # 每页显示数据量
+    
     actions_on_bottom = True
+    
     actions_on_top = False  # 执行框再下面
+    
     list_display = ['teacherId', 'teacherName', 'school']  # 列表展示的列数据
 
     search_fields = ['teacherId', 'teacherName']  # 添加搜索框和搜索条件
